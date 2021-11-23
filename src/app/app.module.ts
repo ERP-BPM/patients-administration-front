@@ -9,6 +9,8 @@ import { EmployeesPageComponent } from './pages/employees-page/employees-page.co
 import { PatientPageComponent } from './pages/patient-page/patient-page.component';
 import { EmployersListComponent } from './components/employers-list/employers-list.component';
 import { EmployersFormComponent } from './components/employers-form/employers-form.component';
+import { PatientsListComponent } from './components/patients-list/patients-list.component';
+import { PatientsFormComponent } from './components/patients-form/patients-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { EmployersFormComponent } from './components/employers-form/employers-fo
     EmployeesPageComponent,
     PatientPageComponent,
     EmployersListComponent,
-    EmployersFormComponent
+    EmployersFormComponent,
+    PatientsListComponent,
+    PatientsFormComponent
   ],
   imports: [
     BrowserModule,

@@ -39,5 +39,7 @@ export class Patient implements IPerson {
     this.genero = props.genero;
     this.fecha_nacimiento = props.fecha_nacimiento;
     this.estado_civil = props.estado_civil;
+    this.nss = props.nss;
+    this.grupo_sanguineo = props.grupo_sanguineo;
   }
 }
