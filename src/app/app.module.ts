@@ -11,6 +11,8 @@ import { EmployersListComponent } from './components/employers-list/employers-li
 import { EmployersFormComponent } from './components/employers-form/employers-form.component';
 import { PatientsListComponent } from './components/patients-list/patients-list.component';
 import { PatientsFormComponent } from './components/patients-form/patients-form.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { PatientsFormComponent } from './components/patients-form/patients-form.
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    GraphQLModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

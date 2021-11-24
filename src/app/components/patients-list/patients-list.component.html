@@ -1,6 +1,6 @@
-<div class="d-flex flex-row justify-content-between flex-wrap">
+<div class="d-flex flex-row justify-content-between flex-wrap md:flex:-nowrap">
 
-  <div class="p-4" *ngFor="let patient of patients">
+  <div class="p-4 " *ngFor="let patient of patients">
 
     <div class="card" style="width: 35em">
 
@@ -17,8 +17,8 @@
 
         <li class="list-group-item"><b>NSS:</b> {{patient.nss}}</li>
         <li class="list-group-item"><b>Grupo sanguineo:</b> {{patient.grupo_sanguineo}}</li>
-        
-        
+
+
       </ul>
 
       <div class="card-body">
