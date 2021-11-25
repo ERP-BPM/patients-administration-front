@@ -19,9 +19,15 @@
         <p class="card-text"><b>Grupo sanguineo:</b> {{patient.grupo_sanguineo}}</p>
 
       </div>
-      <div class="card-footer d-flex justify-content-around">
-        <a (click)="deletePatient(patient)" class="btn btn-danger">Eliminar</a>
-        <a class="btn btn-primary">Actualizar</a>
+      <div class="card-footer d-flex justify-content-around d-flex flex-row flex-wrap">
+        <a (click)="receptionComfirm()" class="btn btn-primary m-1">Confirmación de recepción</a>
+        <a (click)="confirmIngress()" class="btn btn-primary m-1">Confirm ingreso</a>
+        <a (click)="dischargeConfirm()" class="btn btn-primary m-1">Dar de alta</a>
+        <a (click)="infoAboutPatient()" class="btn btn-primary m-1">Información de paciente</a>
+        <a (click)="textSignalConfirm()" class="btn btn-primary m-1">Confirmación de señal</a>
+        
+        <a (click)="deletePatient(patient)" class="btn btn-danger m-1">Eliminar</a>
+        <a class="btn btn-primary m-1">Actualizar</a>
       </div>
     </div>
 
