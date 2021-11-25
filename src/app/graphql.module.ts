@@ -12,7 +12,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     const token = localStorage.getItem('token');
     return {
       headers: {
-        'x-hasura-access-key': 'contrAsenAAERPCAMUNDADocker1424321'
+        'x-hasura-access-key': ''
       }
     };
   });
