@@ -1,30 +1,28 @@
 <div class="d-flex flex-row justify-content-between flex-wrap md:flex:-nowrap">
 
-  <div class="p-4 " *ngFor="let patient of patients">
+  <div class="p-4" *ngFor="let patient of patients">
 
-    <div class="card" style="width: 35em">
-
-      <div class="card-body">
-        <h5 class="card-title">{{patient.nombre}} {{patient.apellido_paterno}} {{patient.apellido_materno}}</h5>
+    <div style="width: 35em;" class="card text-center">
+      <div class="card-header">
+        <h5 class="card-title">
+          {{patient.nombre}} {{patient.apellido_paterno}} {{patient.apellido_materno}}
+        </h5>
       </div>
-
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><b>Genero:</b> {{patient.genero}}</li>
-        <li class="list-group-item"><b>CURP:</b> {{patient.curp}}</li>
-        <li class="list-group-item"><b>Correo:</b> {{patient.email}}</li>
-        <li class="list-group-item"><b>Fecha de nacimiento:</b> {{patient.fecha_nacimiento}}</li>
-        <li class="list-group-item"><b>Estado civil:</b> {{patient.estado_civil}}</li>
-
-        <li class="list-group-item"><b>NSS:</b> {{patient.nss}}</li>
-        <li class="list-group-item"><b>Grupo sanguineo:</b> {{patient.grupo_sanguineo}}</li>
-
-
-      </ul>
-
       <div class="card-body">
+
+        <p class="card-text"><b>Genero:</b> {{patient.genero}}</p>
+        <p class="card-text"><b>CURP:</b> {{patient.curp}}</p>
+        <p class="card-text"><b>Correo:</b> {{patient.email}}</p>
+        <p class="card-text"><b>Fecha de nacimiento:</b> {{patient.fecha_nacimiento}}</p>
+        <p class="card-text"><b>Estado civil:</b> {{patient.estado_civil}}</p>
+        <p class="card-text"><b>NSS:</b> {{patient.nss}}</p>
+        <p class="card-text"><b>Grupo sanguineo:</b> {{patient.grupo_sanguineo}}</p>
+
+      </div>
+      <div class="card-footer d-flex justify-content-around">
         <a (click)="deletePatient(patient)" class="btn btn-danger">Eliminar</a>
+        <a class="btn btn-primary">Actualizar</a>
       </div>
-
     </div>
 
   </div>
