@@ -24,25 +24,26 @@ export class PatientsListComponent implements OnInit {
 
   deletePatient(patient: Patient): void {
     this.patientService.deletePatient(patient);
+
   }
 
-  receptionComfirm(): void {
-    this.confirmationsService.receptionComfirm();
+  receptionComfirm(patient: Patient): void {
+    this.confirmationsService.receptionComfirm(patient.id);
   }
 
-  confirmIngress(): void {
-    this.confirmationsService.confirmIngress();
+  confirmIngress(patient: Patient): void {
+    this.confirmationsService.confirmIngress(patient.id);
   }
 
-  dischargeConfirm(): void {
-    this.confirmationsService.dischargeConfirm();
+  dischargeConfirm(patient: Patient): void {
+    this.confirmationsService.dischargeConfirm(patient.id);
   }
 
-  infoAboutPatient(): void {
-    this.confirmationsService.infoAboutPatient();
+  infoAboutPatient(patient: Patient): void {
+    this.confirmationsService.infoAboutPatient(patient.id);
   }
 
-  textSignalConfirm(): void {
-    this.confirmationsService.textSignalConfirm();
+  takeSignalConfirm(patient: Patient): void {
+    this.confirmationsService.takeSignalConfirm(patient.id);
   }
 }

@@ -8,11 +8,14 @@ const CREATE_PATIENT = gql`
     $apellido_materno: String,
     $apellido_paterno: String,
     $curp: String,
+    $email: String,
     $estado_civil: String,
     $genero: String,
     $nombre: String, $grupo_sanguineo: String, $nss: String) {
-    insert_Hospital_paciente(objects: {apellido_materno: $apellido_materno, apellido_paterno: $apellido_paterno, curp: $curp, estado_civil: $estado_civil, fecha_nacimiento: $fecha_nacimiento, genero: $genero, nombre: $nombre, grupo_sanguineo: $grupo_sanguineo, nss: $nss}) {
-  affected_rows
+    insert_Hospital_paciente(objects: {email: $email, apellido_materno: $apellido_materno, apellido_paterno: $apellido_paterno, curp: $curp, estado_civil: $estado_civil, fecha_nacimiento: $fecha_nacimiento, genero: $genero, nombre: $nombre, grupo_sanguineo: $grupo_sanguineo, nss: $nss}) {
+  returning {
+    id_paciente
+  }
   }
   }
 `;
@@ -20,6 +23,7 @@ const CREATE_PATIENT = gql`
 const GET_PATIENTS = gql`
   query MyQuery {
   Hospital_paciente {
+    email
     id_paciente
     nss
     grupo_sanguineo
@@ -84,34 +88,37 @@ export class PatientService {
     return this.patients;
   }
 
-  createPatient(data: any): void {
+  createPatient(dataP: any): void {
     this.apollo.mutate({
       mutation: CREATE_PATIENT,
       variables: {
-        curp: data.curp,
-        nombre: data.nombre,
-        apellido_paterno: data.apellido_paterno,
-        apellido_materno: data.apellido_materno,
-        // email: data.email,
-        estado_civil: data.estado_civil,
-        genero: data.genero,
+        curp: dataP.curp,
+        nombre: dataP.nombre,
+        apellido_paterno: dataP.apellido_paterno,
+        apellido_materno: dataP.apellido_materno,
+        email: dataP.email,
+        estado_civil: dataP.estado_civil,
+        genero: dataP.genero,
         fecha_nacimiento: '2021-11-11',
-        grupo_sanguineo: data.grupo_sanguineo,
-        nss: data.nss,
+        grupo_sanguineo: dataP.grupo_sanguineo,
+        nss: dataP.nss,
       }
-    }).subscribe(({ }) => {
+    }).subscribe(({ data }) => {
+
+      const dt = data['insert_Hospital_paciente']['returning'][0]['id_paciente'];
+
       this.patients.push(new Patient({
-        id: data.id_paciente,
-        curp: data.curp,
-        nombre: data.nombre,
-        apellido_paterno: data.apellido_paterno,
-        apellido_materno: data.apellido_materno,
-        email: data.email,
-        estado_civil: data.estado_civil,
-        genero: data.genero,
+        id: dt,
+        curp: dataP.curp,
+        nombre: dataP.nombre,
+        apellido_paterno: dataP.apellido_paterno,
+        apellido_materno: dataP.apellido_materno,
+        email: dataP.email,
+        estado_civil: dataP.estado_civil,
+        genero: dataP.genero,
         fecha_nacimiento: 'hoy',
-        grupo_sanguineo: data.grupo_sanguineo,
-        nss: data.nss,
+        grupo_sanguineo: dataP.grupo_sanguineo,
+        nss: dataP.nss,
       }));
     }, (error) => {
       console.log('there was an error sending the query', error);
