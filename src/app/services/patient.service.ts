@@ -4,15 +4,26 @@ import { Apollo, gql } from 'apollo-angular';
 
 const CREATE_PATIENT = gql`
   mutation MyMutation(
-    $fecha_nacimiento: date,
-    $apellido_materno: String,
-    $apellido_paterno: String,
-    $curp: String,
-    $estado_civil: String,
-    $email: String, $genero: String, $nombre: String) {
-  insert_Hospital_persona(objects: {apellido_materno: $apellido_materno, apellido_paterno: $apellido_paterno, curp: $curp, email: $email, estado_civil: $estado_civil, fecha_nacimiento: $fecha_nacimiento, genero: $genero, nombre: $nombre}) {
-  affected_rows
-  }
+      $fecha_nacimiento: date,
+      $apellido_materno: String,
+      $apellido_paterno: String,
+      $curp: String,
+      $estado_civil: String,
+      $email: String,
+      $genero: String,
+      $nombre: String
+    ) {
+      insert_Hospital_persona(objects: {apellido_materno: $apellido_materno,
+      apellido_paterno: $apellido_paterno,
+      curp: $curp,
+      email: $email,
+      estado_civil: $estado_civil,
+      fecha_nacimiento: $fecha_nacimiento,
+      genero: $genero,
+      nombre: $nombre,
+  ) {
+      affected_rows
+    }
   }
 `;
 
@@ -109,7 +120,7 @@ export class PatientService {
         // grupo_sanguineo: data.grupo_sanguineo,
         // nss: data.nss,
       }
-    }).subscribe(({data}) => {
+    }).subscribe(({ data }) => {
       console.log('got data', data);
     }, (error) => {
       console.log('there was an error sending the query', error);
