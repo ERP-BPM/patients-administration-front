@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: 'https://2a3b-2806-2f0-41a0-356b-958-df01-7b81-4706.ngrok.io/send',
+  endpoint: 'https://52f5yn9ike.execute-api.us-west-2.amazonaws.com/prod/send',
   key: 'demo',
 };
 

@@ -7,12 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ConfirmationsService {
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'username': environment.key,
-      'password': environment.key,
-    })
-  };
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -29,7 +24,7 @@ export class ConfirmationsService {
       await this.httpClient.post<any>(
         environment.endpoint,
         body,
-        this.httpOptions
+        // this.httpOptions
       ).toPromise();
     } catch (e) {
       console.log(e);
@@ -49,7 +44,7 @@ export class ConfirmationsService {
       await this.httpClient.post<any>(
         environment.endpoint,
         body,
-        this.httpOptions
+        // this.httpOptions
       ).toPromise();
     } catch (e) {
       console.log(e);
@@ -69,7 +64,7 @@ export class ConfirmationsService {
       await this.httpClient.post<any>(
         environment.endpoint,
         body,
-        this.httpOptions
+        // this.httpOptions
       ).toPromise();
     } catch (e) {
       console.log(e);
@@ -89,7 +84,7 @@ export class ConfirmationsService {
       await this.httpClient.post<any>(
         environment.endpoint,
         body,
-        this.httpOptions
+        // this.httpOptions
       ).toPromise();
     } catch (e) {
       console.log(e);
@@ -110,7 +105,7 @@ export class ConfirmationsService {
       await this.httpClient.post<any>(
         environment.endpoint,
         body,
-        this.httpOptions
+        // this.httpOptions
       ).toPromise();
     } catch (e) {
       console.log(e);
