@@ -3,8 +3,9 @@ import { APOLLO_OPTIONS } from 'apollo-angular';
 import { ApolloClientOptions, ApolloLink, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
+import { environment } from 'src/environments/environment';
 
-const uri = '/api/';
+const uri = environment.gql;
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
 
