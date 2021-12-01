@@ -1,6 +1,10 @@
-# HospitalCRUD
+# Hospital Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.3.
+
+## Description
+
+This repositorie is in charge to make work the front-end of the project which was developed using Angular and Typescript, the project allow the user to enter and modify data of the pacients, this repositorie allow us to manipulate the flow of the project diagram.
 
 ## Development server
 
@@ -25,3 +29,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
