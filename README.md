@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-This repositorie is in charge to make work the front-end of the project which was developed using Angular and Typescript, the project allow the user to enter and modify data of the pacients, this repositorie allow us to manipulate the flow of the project diagram.
+This repository is in charge to make work the front-end of the project which was developed using Angular and Typescript, the project allow the user to enter and modify data of the pacients, this repositorie allow us to manipulate the flow of the project diagram.
 
 ## Development server
 
